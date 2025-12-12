@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Polaroid Gallery with Music</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #EDE5F4, #F4ECF9);
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #6B5B95;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+body {
+     background: 
+     linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+     url("images/wallpaper.jpg");
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+}
+
+        header {
+            background-color: #6B5B95;
+            color: white;
+            padding: 50px 0;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        main h2 {
+  font-size: 35px;
+  font-weight: bold;
+  color: white;
+
+  animation: slideFadeIn 1.5s ease forwards;
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+main p {
+    font-size: 30px;
+    color: #6B5B95;
+}
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4E3F91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #B497BD;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #B497BD;
+            color: #FFFFFF;
+            border-radius: 6px;
+        }
+
+        main {
+            padding: 40px 20px;
+            min-height: 70vh;
+        }
+
+        
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+            padding-bottom: 300px;
+        }
+
+        .polaroid {
+            width: 150px;
+            height: 200px;
+            background-color: #FFFFFF;
+            padding: 10px;
+            box-shadow: 0 5px 15px rgba(107, 91, 149, 0.3);
+            position: absolute;
+            border-radius: 8px;
+            transform-origin: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .polaroid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .polaroid p {
+            margin: 5px 0 0;
+            font-weight: bold;
+            color: #6B5B95;
+            font-size: 18px; 
+    transition: font-size 0.3s; 
+        }
+
+        @keyframes float {
+            0% { transform: translateX(-200px) rotate(-10deg); }
+            50% { transform: translateX(110vw) rotate(10deg); }
+            100% { transform: translateX(-200px) rotate(-10deg); }
+        }
+
+        .polaroid1 { top: 20px; animation: float 20s linear infinite; }
+        .polaroid2 { top: 90px; animation: float 22s linear infinite; }
+        .polaroid3 { top: 160px; animation: float 24s linear infinite; }
+        .polaroid4 { top: 230px; animation: float 26s linear infinite; }
+        .polaroid5 { top: 300px; animation: float 28s linear infinite; }
+        .polaroid6 { top: 370px; animation: float 30s linear infinite; }
+        .polaroid7 { top: 440px; animation: float 32s linear infinite; }
+        .polaroid8 { top: 510px; animation: float 34s linear infinite; }
+        .polaroid9 { top: 580px; animation: float 36s linear infinite; }
+        .polaroid10 { top: 650px; animation: float 38s linear infinite; }
+
+        .polaroid:hover {
+            transform: scale(1.2) rotate(0deg);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(107, 91, 149, 0.6);
+        }
+
+        footer {
+            background: #6B5B95;
+            padding: 15px;
+            color: #E6D4EF;
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<header> &#128247; Polaroid Gallery &#128247; </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>My Floating Polaroid Gallery</h2>
+    <p>Hover over the images to zoom in!</p>
+
+
+    <audio controls>
+        <source src="music/song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <br><br>
+
+    <div class="gallery-container">
+
+        <div class="polaroid polaroid1">
+            <img src="images/polaroid1.jpg" alt="Family Together">
+            <p>Family Together</p>
+        </div>
+
+        <div class="polaroid polaroid2">
+            <img src="images/polaroid2.jpg" alt="Bonding Class">
+            <p>Bonding Class</p>
+        </div>
+
+        <div class="polaroid polaroid3">
+            <img src="images/polaroid3.jpg" alt="Briskwalk at Kampung Belukar">
+            <p>Briskwalk at Kampung Belukar</p>
+        </div>
+
+        <div class="polaroid polaroid4">
+            <img src="images/polaroid4.jpg" alt="Iftar with Friends">
+            <p>Iftar with Friends</p>
+        </div>
+
+        <div class="polaroid polaroid5">
+            <img src="images/polaroid5.jpg" alt="Mirror Selfie">
+            <p>Mirror Selfie</p>
+        </div>
+
+        <div class="polaroid polaroid6">
+            <img src="images/polaroid6.jpg" alt="Corporate Outfit">
+            <p>Corporate Outfit</p>
+        </div>
+
+        <div class="polaroid polaroid7">
+            <img src="images/polaroid7.jpg" alt="Last Paper Semester 4">
+            <p>Last Paper Semester 4</p>
+        </div>
+
+        <div class="polaroid polaroid8">
+            <img src="images/polaroid8.jpg" alt="Mirror Selfie">
+            <p>Mirror Selfie</p>
+        </div>
+
+        <div class="polaroid polaroid9">
+            <img src="images/polaroid9.jpg" alt="Intern Friend">
+            <p>Intern Friend</p>
+        </div>
+
+        <div class="polaroid polaroid10">
+            <img src="images/polaroid10.jpg" alt="Mirror Selfie">
+            <p>Mirror Selfie</p>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Family</title>
+    <style>
+        body {
+            background: 
+                linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+                url("images/wallpaper.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+            color: #FFFFFF;
+        }
+
+        header {
+            background-color: #6B5B95;
+            padding: 20px;
+            letter-spacing: 2px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 40px;
+            margin: 0;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4E3F91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #B497BD;
+            padding: 14px 18px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #B497BD;
+            color: #FFFFFF;
+            border-radius: 8px;
+        }
+
+        
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            border-top: 4px solid #6B5B95;
+            border-bottom: 4px solid #6B5B95;
+        }
+
+        main h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 34px;
+            color: #B497BD;
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px white;
+        }
+
+        .family-info {
+            background: rgba(107, 91, 149, 0.6);
+            padding: 20px;
+            border-left: 6px solid #B497BD;
+            border-radius: 18px;
+            max-width: 750px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: left;
+        }
+
+        .family-info ol {
+            margin: 0;
+            padding-left: 25px;
+            color: #FFFFFF;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .family-info ol li:first-child {
+         background-color: transparent;
+         border-left: none;
+        }
+
+        .family-info ol li {
+        padding: 8px;
+        }
+
+        .family-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .family-item {
+            background: #6B5B95;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+            border: 3px solid #B497BD;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .family-item:hover {
+            transform: scale(1.05);
+        }
+
+        .family-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #B497BD;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .caption {
+            margin-top: 10px;
+            font-size: 16px;
+            color: #FFFFFF;
+            background: rgba(180, 151, 189, 0.5);
+            padding: 8px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            border: 2px solid #B497BD;
+        }
+
+        footer {
+            background: #6B5B95;
+            padding: 10px;
+            color: #E6D4EF;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Family &#128515; </h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2> &#128106; My Lovely Family &#128106; </h2>
+
+    <div class="family-info">
+        <ol>
+            <li>My father's name is <b>Mohd Yussoff Bin Mat Adam</b>.</li>
+            <li>My mother's name is <b>Norizan Binti Abdul Ghani</b>.</li>
+            <li>My oldest brother is <b>Mohd Firdaus Bin Mohd Yussoff</b>.</li>
+            <li>My sister is <b>Nurul Farhana Binti Mohd Yussoff</b>.</li>
+            <li>My brother is <b>Mohd Faizal Bin Mohd Yussoff</b>.</li>
+            <li>I am the <b>youngest</b> among 4 siblings.</li>
+            <li>I also have <b>3 nephews</b> and <b>one brother-in-law</b>.</li>
+        </ol>
+    </div>
+
+    <div class="family-gallery">
+        <div class="family-item">
+            <img src="images/family1.jpg" alt="Parents">
+            <p class="caption"> &#128147; My Lovely Parents &#128147; </p>
+        </div>
+
+        <div class="family-item">
+            <img src="images/family2.jpg" alt="Siblings">
+            <p class="caption"> &#128149; My Siblings &#128149; </p>
+        </div>
+
+        <div class="family-item">
+            <img src="images/family3.jpg" alt="Together">
+            <p class="caption"> &#128157; Family Together &#128157;</p>
+        </div>
+
+        <div class="family-item">
+            <img src="images/family4.jpg" alt="Memories">
+            <p class="caption"> &#128150; Happy Memories &#128150; </p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+</body>
+</html>

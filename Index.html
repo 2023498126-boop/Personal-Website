@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatanah's Personal Website</title>
+
+<style>
+
+body {
+    background: 
+        linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+        url("images/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #4E3F91;
+    text-align: center;
+    position: relative;
+}
+
+
+@keyframes moveHeader {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(35px); }
+    100% { transform: translateX(0); }
+}
+
+header {
+    background-color: #6B5B95;
+    color: white;
+    padding: 25px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 38px;
+    letter-spacing: 3px;
+    text-shadow: 0 0 8px #B497BD;
+    position: relative;
+    z-index: 2;
+    animation: moveHeader 6s ease-in-out infinite;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #4E3F91;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul li a {
+    display: block;
+    color: #A4B3B6;
+    padding: 14px 18px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #B497BD;
+    color: white;
+    border-radius: 8px;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px auto;
+    padding: 40px;
+    width: 90%;
+    border-radius: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.welcome-intro-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: #6B5B95;
+    border: 3px solid #B497BD;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 800px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.welcome-intro-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(180, 151, 189, 0.5);
+}
+
+.small-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 4px solid #B497BD;
+}
+
+.intro-text {
+    flex: 1 1 400px;
+    color: #FFFFFF;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.intro-text h2 {
+    margin-top: 0;
+    color: #B497BD;
+}
+
+
+.clock-container {
+    width: 200px;
+    height: 200px;
+    background: #6B5B95;
+    border: 4px solid #B497BD;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+#clock {
+    font-size: 36px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+
+footer {
+    background: #4E3F91;
+    padding: 15px;
+    color: #E6D4EF;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+    position: relative;
+    z-index: 3;
+}
+
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.drop {
+    position: absolute;
+    width: 2px;
+    height: 15px;
+    background: rgba(255,255,255,0.5);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-20px); }
+    100% { transform: translateY(100vh); }
+}
+
+
+@media (max-width: 768px) {
+    .welcome-intro-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-text {
+        text-align: center;
+    }
+}
+
+
+#loginModal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#loginModalContent {
+    background-color: #6B5B95;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    text-align: center;
+    color: #FFFFFF;
+    width: 90%;
+    max-width: 400px;
+}
+
+#loginModal input {
+    padding: 10px;
+    width: 80%;
+    margin: 15px 0;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+#loginModal button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #B497BD;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#loginModal button:hover {
+    background-color: #FFFFFF;
+    color: #B497BD;
+}
+
+</style>
+</head>
+<body>
+
+
+<div id="loginModal">
+    <div id="loginModalContent">
+        <h2>Enter Your Name</h2>
+        <input type="text" id="username" placeholder="Your Name">
+        <br>
+        <button onclick="login()">Enter</button>
+    </div>
+</div>
+
+<header> &#127800; FATANAH'S PERSONAL WEBSITE &#127800; </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="welcome-intro-box">
+        <img src="images/profile.jpg" class="small-pic" alt="Profile">
+
+        <div class="intro-text">
+            <h2> &#128075; Hi there! Welcome to my website &#128075; </h2>
+            <p>My name is <b>Nurul Fatanah Binti Mohd Yussoff</b>, and I created this website for <b>IMD318</b>. Explore my life, family, education, friends, favourite things, gallery, and some fun games!</p>
+        </div>
+    </div>
+
+    <div class="clock-container">
+        <div id="clock"></div>
+        <div id="date"></div>
+    </div>
+</main>
+
+<div class="rain" id="rain"></div>
+
+<footer>
+    <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+<script>
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent =
+        now.toLocaleTimeString("en-US", { hour12: false });
+    document.getElementById("date").textContent =
+        now.toLocaleDateString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+}
+setInterval(updateClock, 1000);
+updateClock();
+
+
+const rain = document.getElementById('rain');
+const dropCount = 150;
+
+for (let i = 0; i < dropCount; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = Math.random() * window.innerWidth + 'px';
+    drop.style.animationDuration = 0.5 + Math.random() * 0.5 + 's';
+    drop.style.animationDelay = Math.random() * 5 + 's';
+    rain.appendChild(drop);
+}
+
+
+function login() {
+    const username = document.getElementById('username').value;
+    if (username.trim() !== "") {
+        document.getElementById('loginModal').style.display = 'none';
+        alert(`Welcome, ${username}!`);
+    } else {
+        alert("Please enter your name to proceed.");
+    }
+}
+
+
+window.onload = function() {
+    document.getElementById('loginModal').style.display = 'flex';
+};
+</script>
+
+</body>
+</html>

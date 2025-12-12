@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snake Game</title>
+
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #EDE5F4, #F4ECF9);
+            font-family: 'Poppins', sans-serif;
+            color: #6B5B95;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+body {
+     background: 
+     linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+     url("images/wallpaper.jpg");
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+}
+
+        header {
+            background-color: #6B5B95;
+            color: white;
+            padding: 40px 0;
+            font-size: 32px;
+            font-weight: bold;
+            
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4E3F91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #B497BD;
+            padding: 14px 22px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #B497BD;
+            color: #FFFFFF;
+            border-radius: 8px;
+        }
+
+        main h2 {
+            margin-top: 30px;
+            font-size: 28px;
+            color: #6B5B95;
+        }
+
+        #gameContainer {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        canvas {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(107, 91, 149, 0.3);
+        }
+
+        #score {
+            font-size: 22px;
+            margin-top: 15px;
+            color: #6B5B95;
+        }
+
+        footer {
+            background: #6B5B95;
+            padding: 10px;
+            color: #E6D4EF;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header> Snake Game &#128013; </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Control the Snake using Arrow Keys!</h2>
+
+    <div id="gameContainer">
+        <canvas id="gameCanvas" width="400" height="400"></canvas>
+    </div>
+
+    <p id="score">Score: 0</p>
+</main>
+
+<footer>
+<p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+<script>
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const box = 20;
+    let snake = [{ x: 9 * box, y: 9 * box }];
+    let food = {
+        x: Math.floor(Math.random() * 20) * box,
+        y: Math.floor(Math.random() * 20) * box
+    };
+
+    let score = 0;
+    let direction;
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "ArrowUp" && direction !== "DOWN") direction = "UP";
+        else if (event.key === "ArrowDown" && direction !== "UP") direction = "DOWN";
+        else if (event.key === "ArrowLeft" && direction !== "RIGHT") direction = "LEFT";
+        else if (event.key === "ArrowRight" && direction !== "LEFT") direction = "RIGHT";
+    });
+
+    function drawGame() {
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillRect(0, 0, 400, 400);
+
+        ctx.fillStyle = "#6B5B95";
+        snake.forEach((segment, index) => {
+            ctx.fillRect(segment.x, segment.y, box - 1, box - 1);
+        });
+
+        ctx.fillStyle = "#B497BD";
+        ctx.fillRect(food.x, food.y, box - 1, box - 1);
+
+        let head = { x: snake[0].x, y: snake[0].y };
+
+        if (direction === "UP") head.y -= box;
+        if (direction === "DOWN") head.y += box;
+        if (direction === "LEFT") head.x -= box;
+        if (direction === "RIGHT") head.x += box;
+
+        if (head.x === food.x && head.y === food.y) {
+            score++;
+            document.getElementById("score").textContent = "Score: " + score;
+            food = {
+                x: Math.floor(Math.random() * 20) * box,
+                y: Math.floor(Math.random() * 20) * box
+            };
+        } else {
+            snake.pop();
+        }
+
+        if (
+            head.x < 0 || head.x >= 400 ||
+            head.y < 0 || head.y >= 400 ||
+            snake.some(seg => seg.x === head.x && seg.y === head.y)
+        ) {
+            alert("Game Over! Your score is " + score);
+            document.location.reload();
+        }
+
+        snake.unshift(head);
+    }
+
+    setInterval(drawGame, 120);
+</script>
+
+</body>
+</html>

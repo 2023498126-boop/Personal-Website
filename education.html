@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Education</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #6B5B95, #A4B3B6);
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF;
+        }
+        body {
+     background: 
+     linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+     url("images/wallpaper.jpg");
+     background-size: cover;
+     background-position: center;
+     background-attachment: fixed;
+}
+
+
+        header {
+            background-color: #6B5B95;
+            color: #E8D9F3;
+            padding: 50px 0;
+            font-size: 40px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            
+        }
+
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4E3F91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #E6D4EF;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #B497BD;
+            color: white;
+            border-radius: 8px;
+        }
+
+       .intro-text {
+          font-size: 30px;
+          font-weight: 600;
+          color: #FFFFFF;
+          text-shadow: 0 0 6px rgba(0,0,0,0.4);
+          margin-top: 20px;
+        }
+
+        .stairs-container {
+            width: 90%;
+            margin: 40px auto;
+            position: relative;
+        }
+
+        .stairs-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 8px;
+            height: 100%;
+            background: pink;
+            border-radius: 5px;
+            transform: translateX(-50%);
+        }
+
+    
+        .step {
+            width: 330px;
+            padding: 20px;
+            background: #6B5B95;
+            border: 3px solid #B497BD;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            position: relative;
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .step img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid #B497BD;
+        }
+
+        .step h3 {
+            margin-top: 10px;
+            color: #EBD8F5;
+            font-size: 20px;
+        }
+
+        .step p {
+            background: rgba(255,255,255,0.2);
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 15px;
+        }
+
+        
+        .step1 { margin-left: 0; margin-bottom: 50px; }
+        .step2 { margin-left: 150px; margin-bottom: 50px; }
+        .step3 { margin-left: 300px; margin-bottom: 50px; }
+        .step4 { margin-left: 450px; }
+
+        
+        @media (max-width: 768px) {
+            .stairs-line { display: none; }
+            .step, .step1, .step2, .step3, .step4 {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        footer {
+            background: #6B5B95;
+            padding: 10px;
+            color: #E6D4EF;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+<header> MY EDUCATION JOURNEY &#128522; </header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+    </ul>
+</nav>
+
+
+<p class="intro-text">Education has always been a big part of my life. Here's a glimpse of my journey from kindergarten to university</p>
+
+<div class="stairs-container">
+    <div class="stairs-line"></div>
+
+    <div class="step step1">
+        <img src="images/pra.jpg" alt="Kindergarten">
+        <h3> &#9997; Kindergarten</h3>
+        <p>My first step in learning! I enjoyed making friends and discovering new things every day at Pasti Ibnu Khaldun, Kuantan Pahang</p>
+    </div>
+
+    <div class="step step2">
+        <img src="images/rendah.jpg" alt="Primary School">
+        <h3>  &#129518; Primary School</h3>
+        <p>Studied at Sekolah Kebangsaan Sungai Karang,Kuantan Pahang and learned discipline & teamwork.</p>
+    </div>
+
+    <div class="step step3">
+        <img src="images/menengah.jpeg" alt="Secondary School">
+        <h3>  &#128218; Secondary School</h3>
+        <p>I studied at SMK Tengku Afzan,Jalan Alor Akar,Kuantan Pahang where I grew more mature and discovered my interests.</p>
+    </div>
+
+    <div class="step step4">
+        <img src="images/uitm.png" alt="Diploma">
+        <h3>  &#127891; Diploma (UiTM Machang)</h3>
+        <p>Currently, pursuing my Diploma in Information Management at UiTM Machang, Kelantan.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+/*General Styling*/
+body{
+	font-family:Arial, Sans Serif;
+	background-color:LightCoral;
+	margin:0;
+	padding:0;
+}
+
+/*Heading*/
+h1{
+	text-align:center;
+	color:black;
+	margin:20px 0px;
+}
+
+/*Navigation bar*/
+nav{
+	background:White;
+	width:1000px;
+	display:flex;
+	justify-content:space-between;
+	align-items: center;
+	margin:0 auto;
+	padding: 5px 10px;
+	border-radius:22px;
+	box-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+}
+
+nav > a{
+	color:Black;
+	text-decoration:none;
+	padding:8px 16px;
+	border-radius:22px;
+	transaction:background 0.25s,color 0.25s;
+}
+
+nav > a:hover{
+	background:rgb(56,130,209);
+    color:white;
+}
+
+/*Website Content*/
+.content{
+	background: PeachPuff;
+	color:black;
+	width:80%;
+	margin: 40px auto 100px auto;
+	padding:30px;
+	border-radius:15px;
+	box-shadow:2px 2px 15px rgba(0,0,0,0.2);
+	text-align:center;
+	transaction:background 0.25s, color0.25s;
+}
+
+.content h2{
+	margin-bottom:15px;
+	color:rgb(56,130,209);
+
+}
+
+/*Footer Styling*/
+.footer{
+	background:#111;
+	color:#ddd;
+	text-align:center;
+	padding:15 px 0;
+	bottom:0;
+	left:0;
+	width:100%;
+	border-top: 3px solid rgb(56,130,209);
+	font-size:0.9em;
+	box-shadow:0 -2px 10px rgba(0,0,0, 0.3);
+	position:fixed;
+}
+
+.footer p{
+	margin:0;
+}

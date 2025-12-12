@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Friends</title>
+
+    <style>
+
+.video-header {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: black;
+}
+
+.video-header video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-video-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.header-video-text h1 {
+    font-size: 55px;
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 0 0 12px black;
+    margin: 0;
+}
+
+
+body {
+    background:
+        linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+        url("images/wallpaper.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #4E3F91;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: block;
+    color: #B497BD;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #B497BD;
+    color: #FFFFFF;
+    border-radius: 6px;
+}
+
+
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #FFD6FF;
+    text-shadow: 0 0 10px #000;
+}
+
+.click-instruction {
+    font-size: 30px; 
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+
+
+.orbit-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.center-circle {
+    width: 200px;
+    height: 200px;
+    background: #B497BD;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 18px rgba(0,0,0,0.3);
+}
+
+.orbit {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateOrbit 12s linear infinite;
+}
+
+@keyframes rotateOrbit {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.friend {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #FFFFFF;
+    position: absolute;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.friend:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #FFFFFF;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 80px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 10px;
+    border: 4px solid #B497BD;
+}
+
+#modalName {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #FFD6FF;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: #FFD6FF;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #FFFFFF;
+}
+
+
+footer {
+    background: #6B5B95;
+    padding: 10px;
+    color: #E6D4EF;
+    margin-top: 40px;
+}
+    </style>
+</head>
+
+<body>
+
+
+<div class="video-header">
+    <video autoplay muted loop>
+        <source src="video/header4.mp4" type="video/mp4">
+    </video>
+
+    <div class="header-video-text">
+        <h1>My Friends &#127799;</h1>
+    </div>
+</div>
+
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutme.html">About Me</a></li>
+        <li><a href="family.html">Family</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="friends.html">Friends</a></li>
+        <li><a href="favourite.html">Favourite</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="games.html">Games</a></li>
+    </ul>
+</nav>
+
+
+<main>
+    
+    <p class="click-instruction">Click on any friend to see a bigger picture and their name!</p>
+
+
+    <div class="orbit-container">
+        <div class="center-circle"></div>
+
+        <div class="orbit">
+            <img src="images/friends1.jpg" class="friend" style="top: 0; left: 50%; transform: translateX(-50%);" onclick="openModal(this.src, 'Siti Nur Bahiyah')">
+            <img src="images/friends2.jpg" class="friend" style="top: 50%; left: 0; transform: translateY(-50%);" onclick="openModal(this.src, 'Nur Qashrina')">
+            <img src="images/friends3.jpg" class="friend" style="bottom: 0; left: 50%; transform: translateX(-50%);" onclick="openModal(this.src, 'Anis Safra')">
+            <img src="images/friends4.jpg" class="friend" style="top: 50%; right: 0; transform: translateY(-50%);" onclick="openModal(this.src, 'Urmila As Shyiken')">
+            <img src="images/friends5.jpg" class="friend" style="top: 15%; left: 15%;" onclick="openModal(this.src, 'Nur Ain Syarafina')">
+            <img src="images/friends6.jpg" class="friend" style="top: 15%; right: 15%;" onclick="openModal(this.src, 'Dhia Amni')">
+            <img src="images/friends7.jpg" class="friend" style="bottom: 15%; left: 15%;" onclick="openModal(this.src, 'Amni Qasrina')">
+            <img src="images/friends8.jpg" class="friend" style="bottom: 15%; right: 15%;" onclick="openModal(this.src, 'Mae Kamila')">
+        </div>
+    </div>
+
+    
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+        <p id="modalName"></p>
+    </div>
+</main>
+
+
+<footer>
+    <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+</footer>
+
+<script>
+function openModal(src, name) {
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("modalImg").src = src;
+    document.getElementById("modalName").innerText = name;
+}
+
+function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+}
+
+window.onclick = function(event) {
+    const modal = document.getElementById("myModal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
