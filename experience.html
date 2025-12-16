@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Experience</title>
+    <style>
+       body {
+            background:
+            linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
+            url("images/wallpaper.JPG");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #FFFFFF;
+            text-align: center;
+        }
+
+        header {
+            background-color: #6B5B95;
+            color: white;
+            padding: 50px 0;
+            font-size: 36px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #4E3F91;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            display: block;
+            color: #B497BD;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #B497BD;
+            color: #FFFFFF;
+            border-radius: 6px;
+        }
+
+        
+        main {
+            padding: 40px 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FFD6FF;
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px #000;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .intro-text {
+            font-size: 28px;     
+            font-weight: 600; 
+            color: #FFFFFF;
+            text-shadow: 0 0 6px rgba(0,0,0,0.4);
+            margin-top: 20px;
+        }
+
+        .exp-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            justify-items: center;
+        }
+
+        .exp-item {
+            background: rgba(107, 91, 149, 0.8);
+            border-radius: 15px;
+            border: 3px solid #B497BD;
+            box-shadow: 0 4px 15px rgba(180,151,189,0.5);
+            overflow: hidden;
+            width: 250px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .exp-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.6);
+        }
+
+        .exp-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 3px solid #B497BD;
+        }
+
+        .exp-item h3 {
+            font-size: 18px;
+            margin: 10px 0 15px;
+            color: #FFD6FF;
+            padding: 0 10px;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: rgba(107, 91, 149, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            animation: fadeIn 0.4s;
+            color: #FFFFFF;
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            border: 3px solid #B497BD;
+        }
+
+        .modal-content h3 {
+            color: #FFD6FF;
+            margin-bottom: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            color: #FFD6FF;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: #FF6347;
+        }
+
+        footer {
+            background: #6B5B95;
+            padding: 10px;
+            color: #E6D4EF;
+            margin-top: 30px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header> MY EXPERIENCE &#128525; </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutme.html">About Me</a></li>
+            <li><a href="family.html">Family</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="friends.html">Friends</a></li>
+            <li><a href="favourite.html">Favourite</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="games.html">Games</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        
+        <p class="intro-text">Here are some of my experiences that helped me grow personally and professionally.</p>
+
+
+            <div class="exp-gallery">
+            <div class="exp-item" onclick="openModal('exp1')">
+                <img src="images/exp1.jpg" alt="Experience 1">
+                <h3>Kem Wawasan SISPA</h3>
+            </div>
+
+            <div class="exp-item" onclick="openModal('exp2')">
+                <img src="images/exp2.jpg" alt="Experience 2">
+                <h3>Internship at Perbadanan Perpustakaan Awam Pahang</h3>
+            </div>
+
+            <div class="exp-item" onclick="openModal('exp3')">
+                <img src="images/exp3.jpg" alt="Experience 3">
+                <h3>Hiking Bukit Pelindung</h3>
+            </div>
+
+            <div class="exp-item" onclick="openModal('exp4')">
+                <img src="images/exp4.jpg" alt="Experience 4">
+                <h3>Program Quran Hour</h3>
+            </div>
+            <div class="exp-item" onclick="openModal('exp5')">
+                <img src="images/exp5.jpg" alt="Experience 5">
+                <h3>Tourism Museum Sungai Lembing</h3>
+            </div>
+
+            <div class="exp-item" onclick="openModal('exp6')">
+                <img src="images/exp6.jpg" alt="Experience 6">
+                <h3>Tour Library</h3>
+            </div>
+
+            <div class="exp-item" onclick="openModal('exp7')">
+                <img src="images/exp7.jpg" alt="Experience 7">
+                <h3>Spectrum Run</h3>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 | This website is for educational purposes only | IMD318 Assignment | Nurul Fatanah Binti Mohd Yussoff</p>
+    </footer>
+
+        <div id="exp1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp1')">&times;</span>
+            <img src="images/exp1.jpg">
+            <h3>Kem Wawasan SISPA</h3>
+            <p>In sem 2 I participated in the Sispa Corps field training at the Wawasan Camp, UiTM Kelantan Branch, Machang Campus.</p>
+        </div>
+    </div>
+
+    <div id="exp2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp2')">&times;</span>
+            <img src="images/exp2.jpg">
+            <h3>Internship</h3>
+            <p>I completed my internship at Perbadanan Perpustakaan Awam Pahang for 8 weeks.</p>
+        </div>
+    </div>
+
+    <div id="exp3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp3')">&times;</span>
+            <img src="images/exp3.jpg">
+            <h3>Hiking Bukit Pelindung</h3>
+            <p>I love hiking Bukit Pelindung with friends every weekend.</p>
+        </div>
+    </div>
+
+    <div id="exp4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp4')">&times;</span>
+            <img src="images/exp4.jpg">
+            <h3>Program Quran Hour</h3>
+            <p>During internship, I joined Quran Hour at Perbadanan Perpustakaan Awam Pahang.</p>
+        </div>
+    </div>
+
+    <div id="exp5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp5')">&times;</span>
+            <img src="images/exp5.jpg">
+            <h3>Tourism Museum Sungai Lembing</h3>
+            <p>The library brought us to the Sungai Lembing Museum during internship.</p>
+        </div>
+    </div>
+
+    <div id="exp6" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp6')">&times;</span>
+            <img src="images/exp6.jpg">
+            <h3>Library Tour</h3>
+            <p>I guided students from SMK Selendang for a library tour and Petroscience.</p>
+        </div>
+    </div>
+
+    <div id="exp7" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('exp7')">&times;</span>
+            <img src="images/exp7.jpg">
+            <h3>Spectrum Run</h3>
+            <p>I joined Spectrum Run organized by Kolej TDM. It was so fun!</p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = "flex";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll(".modal");
+            modals.forEach(modal => {
+                if (event.target === modal) modal.style.display = "none";
+            });
+        }
+    </script>
+
+</body>
+</html>
