@@ -6,7 +6,7 @@
         body {
             background: 
                 linear-gradient(to bottom right, rgba(107,91,149,0.6), rgba(164,179,182,0.6)),
-                url("images/wallpaper.jpg");
+                url("wallpaper.jpg");
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -187,19 +187,19 @@
 <script>
 const favourites = {
     food: [
-        { src: "images/food4.jpeg", name: "Pizza" },
-        { src: "images/food5.jpeg", name: "Nasi Beriani" },
-        { src: "images/food6.jpeg", name: "Croffle & Croissant" }
+        { src: "food4.jpeg", name: "Pizza" },
+        { src: "food5.jpeg", name: "Nasi Beriani" },
+        { src: "food6.jpeg", name: "Croffle & Croissant" }
     ],
     song: [
-        { src: "images/song1.jpg", name: "Still with You by Jungkook" },
-        { src: "images/song2.jpg", name: "Back to Friends by Sombr" },
-        { src: "images/song3.jpg", name: "Double Take by Dhruv" }
+        { src: "song1.jpg", name: "Still with You by Jungkook" },
+        { src: "song2.jpg", name: "Back to Friends by Sombr" },
+        { src: "song3.jpg", name: "Double Take by Dhruv" }
     ],
     book: [
-        { src: "images/book1.jpg", name: "Seseorang untuk Aku" },
-        { src: "images/book2.jpg", name: "Dia Tetap Sempurna" },
-        { src: "images/book3.jpg", name: "Will You Stay?" }
+        { src: "book1.jpg", name: "Seseorang untuk Aku" },
+        { src: "book2.jpg", name: "Dia Tetap Sempurna" },
+        { src: "book3.jpg", name: "Will You Stay?" }
     ]
 };
 
@@ -208,7 +208,7 @@ function openModal(category) {
     const modalContent = document.getElementById("modalContent");
     modalContent.innerHTML = "";
 
-    if (!favourites[category]) return; // Safety check
+    if (!favourites[category]) return; 
 
     favourites[category].forEach(item => {
         const container = document.createElement("div");
@@ -244,3 +244,4 @@ window.onclick = function(event) {
 
 </body>
 </html>
+
